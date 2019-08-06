@@ -1,0 +1,73 @@
+#---------------------------------------------------------------------------------------------------------------------------------------
+# Course_I_Week_II_Pyhton_data_structures
+#---------------------------------------------------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------------------------------------------------
+# String Library
+#---------------------------------------------------------------------------------------------------------------------------------------
+greet = 'HELLO JOHN'
+lower_greet = greet.lower()
+print(lower_greet)
+print(greet)
+#---------------------------------------------------------------------------------------------------------------------------------------
+print('HELLO JOHN'.lower())
+#---------------------------------------------------------------------------------------------------------------------------------------
+stuffs = 'you can do'
+type(stuffs)
+dir(stuffs)
+#---------------------------------------------------------------------------------------------------------------------------------------
+# Samples
+str.capitalize()
+str.center(width[, fillchar])
+str.endswith(suffix[, start[, end]])
+str.find(sub[, start[, end]])
+str.lstrip([chars])
+str.replace(old, new[, count])
+str.lower()
+str.rstrip([chars])
+str.strip([chars])
+str.upper()
+#---------------------------------------------------------------------------------------------------------------------------------------
+# string library - find function
+apple = 'red color'
+find_lor = apple.find('lor')
+print(find_lor)
+find_xyz = apple.find('xyz')
+print(find_xyz)
+#---------------------------------------------------------------------------------------------------------------------------------------
+apple = 'red color'
+replace_apple_orange = apple.replace('red', 'orange')
+print(replace_apple)
+replace_apple_o = apple.replace('o', 'r')
+print(replace_apple_o)
+#---------------------------------------------------------------------------------------------------------------------------------------
+# stripping whitespace
+a = '   hello world   '
+a.lstrip()
+a.rstrip()
+a.strip()
+#---------------------------------------------------------------------------------------------------------------------------------------
+line = ('Are you listening')
+line.startswith('Are')
+line.startswith('are')
+line.startswith('A')
+line.startswith('a')
+#---------------------------------------------------------------------------------------------------------------------------------------
+# Parsing and Extracting
+# From vargheesjohn013@gmail.com Tue Aug 6 12:44:26 2019
+data = 'From vargheesjohn013@gmail.com Tue Aug 6 12:44:26 2019'
+at_pos = data.find('@')
+print(at_pos)
+space_pos = data.find(' ', at_pos)
+print(space_pos)
+parsed_and_extracted = data[at_pos+1 : space_pos]
+print(parsed_and_extracted)
+#---------------------------------------------------------------------------------------------------------------------------------------
+# External tool test
+# 6.5 Write code using find() and string slicing (see section 6.10) to extract the number at the end of the line below. Convert the extracted value to a floating point number and print it out.
+text = "X-DSPAM-Confidence:    0.8475";
+start_number_pos = text.find('0')
+end_number_pos = text.find('5', start_number_pos)
+parsed_and_extracted = float(text[start_number_pos+1 : ])
+print(parsed_and_extracted)
+#---------------------------------------------------------------------------------------------------------------------------------------
