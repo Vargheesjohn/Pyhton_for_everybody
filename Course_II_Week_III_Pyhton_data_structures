@@ -1,26 +1,86 @@
 #---------------------------------------------------------------------------------------------------------------------------------------
 # Course_II_Week_III_Pyhton_data_structures
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# the new line character
+x = "this is us"
+x
+print(x.upper())
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+x = "this \n is \n us"
+x
+print(x.upper())
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# open a nwe file
+somefile = open('words.txt')
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# reading and listing the file
+for reading_and_listing_the_file in somefile:
+    print(reading_and_listing_the_file)
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# reading the file
+reading_the_file = somefile.read()
+print(len(reading_the_file))
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# searching through a file
+for searching_through_a_file in somefile:
+    if searching_through_a_file.linestartswith ('From '):
+        print(searching_through_a_file)
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# searching through a file and stripping whitespace
+for searching_through_a_file_strip in somefile:
+    searching_through_a_file_strip = searching_through_a_file_strip.rstrip()
+    if searching_through_a_file_strip.linestartswith ('From '):
+        print(searching_through_a_file_strip)
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# searching through a file and stripping whitespace
+# output same as above
+# just a fancy way
+for searching_through_a_file_strip in somefile:
+    searching_through_a_file_strip = searching_through_a_file_strip.rstrip()
+    if not searching_through_a_file_strip.linestartswith ('From '):
+        continue
+    print(searching_through_a_file_strip)
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# searching through a file and stripping whitespace
+# using in statement
+for searching_through_a_file_strip in somefile:
+    searching_through_a_file_strip = searching_through_a_file_strip.rstrip()
+    if not "From " in searching_through_a_file_strip:
+        continue
+    print(searching_through_a_file_strip)
 #---------------------------------------------------------------------------------------------------------------------------------------
-
+# prompt python for file name
+prompt = input("Enter file name: ")
+prompt1 = prompt
+count = 0
+for line in prompt1:
+    if line.startswith("Our "):
+        count = count + 1
+print("There were ", count, "paragraphs starting with the word Our in ", prompt)
 #---------------------------------------------------------------------------------------------------------------------------------------
+# prompt python for file name even with bad ones
+prompt = input("Enter a wrong file name: ")
+try:
+    prompt1 = open(prompt)
+except:
+    print("File cannot be opened: ", prompt)
+    quit()
+count = 0
+for line in prompt1:
+    if line.startswith("Our "):
+        count = count + 1
+print("There were ", count, "paragraphs starting with the word Our in ", prompt)
+#---------------------------------------------------------------------------------------------------------------------------------------
+# 7.1 Write a program that prompts for a file name, then opens that file and reads through the file, and print the contents of the file in upper case. Use the file words.txt to produce the output below.
+words_file = input("Type words.txt: ")
+open_words_file = open(words_file)
+for line in open_words_file:
+    stripped_line = line.rstrip()
+    print(stripped_line.upper())
+#---------------------------------------------------------------------------------------------------------------------------------------
+# 7.2 Write a program that prompts for a file name, then opens that file and reads through the file, looking for lines of the form:
+# X-DSPAM-Confidence:    0.8475
+# Count these lines and extract the floating point values from each of the lines and compute the average of those values and produce an output as shown below. Do not use the sum() function or a variable named sum in your solution.
 
 #---------------------------------------------------------------------------------------------------------------------------------------
 
